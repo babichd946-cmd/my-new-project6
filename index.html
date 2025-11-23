@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Language Learning</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <div>Вірно: <span class="correct" id="correctCount">0</span></div>
+                    <div>Невірно: <span class="incorrect" id="incorrectCount">0</span></div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="difficulty-selector">
+            <h3>Рівень складності:</h3>
+            <div class="difficulty-options">
+                <div class="difficulty-option selected" data-level="easy">Початковий</div>
+                <div class="difficulty-option" data-level="medium">Середній</div>
+                <div class="difficulty-option" data-level="hard">Високий</div>
+            </div>
+        </div>
+        
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="step-counter" id="stepCounter">1/10</div>
+        </div>
+        
+        <div class="card" id="wordCard">
+            <div class="card-front">
+                <div class="word" id="currentWord">слово</div>
+                <p>Натисніть для перевірки</p>
+            </div>
+            <div class="card-back">
+                <div class="word" id="currentWordBack">слово</div>
+                <div class="translation" id="correctTranslation">translation</div>
+                <p>Натисніть для продовження</p>
+            </div>
+        </div>
+        
+        <div class="feedback" id="feedback"></div>
+        
+        <input type="text" id="translationInput" placeholder="Введіть переклад...">
+        <div class="error-message" id="inputError">Будь ласка, введіть переклад</div>
+        
+        <div class="buttons">
+            <button id="checkBtn">Перевірити</button>
+            <button id="nextBtn" disabled>Далі</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="resultsModal">
+        <div class="modal-content">
+            <h2>Результати</h2>
+            <div class="score" id="finalScore">0%</div>
+            <div class="level" id="knowledgeLevel">Початківець</div>
+            <button id="restartBtn">Спробувати знову</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
